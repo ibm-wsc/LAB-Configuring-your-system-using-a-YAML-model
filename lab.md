@@ -35,7 +35,8 @@ It would be good to get the Jinja extension too.
 You will have to update the VSCode YAML extension to point to the Schema we have shared with you.
 Once installed go to the extension settings and in the YAML section you will see something that says to edit settings.json:
 
-Figure 1: Configuring the editor
+![VSCode](images/Figure1.png "Figure 1: Configuring the editor")
+
 Click on this and add in the yaml.schema section:
 "yaml.schemas": {
 "/path/zOSUnixParms.schema.json":"*.zosunixinfo.yaml"
@@ -50,7 +51,7 @@ There are three different components in this lab:
 
 ### Component 1: Edit the YAML file
 Find the YAML file in your file browser and edit it with VSCode. You should see something like this:
-![VSCode](path/to/image.jpg "Figure 2: The YAML in a VSCode editor")
+![VSCode](images/Figure2.png "Figure 2: The YAML in a VSCode editor")
 
 What you are looking at is the configuration information displayed in a whole new way. Rather than using the 8 character codes for different configuration elements, you are seeing descriptive definitions. The data is defined in Key Value pairs. They keys are separated from the values by a `:`.
 
@@ -77,7 +78,7 @@ Let’s begin by adding an entry to the configuration.
 1. Let’s just return it to the default of 131072
     - How is this black magic accomplished? When you setup VSCode to support YAML files we added to the configuration a JSON SCHEMA. This schema is the rules for how to handle the yaml file.
 
-![VSCode](path/to/image.jpg "Figure 3: VSCode supporting editing the YAML file")
+![VSCode](/images/Figure3.png "Figure 3: VSCode supporting editing the YAML file")
 
 When you updated the configuration file you told VSCode that whenever it saw a file that ended with zosunixinfo.yaml, that it should use the json schema file zOSUnixParms.schema.json for the rules on how the data should be managed. The cool thing is that these same rules will work in other Integrated Development Environment. There are even standalone editors like vim, that will support these rules.
 
@@ -100,7 +101,7 @@ At the top of the file you should see a banner. Notice that the banner shows the
 This is exactly what you would see if you built it into parmlib.
 How does this work? The parmlibbuild.py is a program that takes the YAML input, turns it into a structure. It then uses a jinja template to figure out how to create the member. You will never have to touch this template. IBM will provide it along with the JSON schema. As a user you will be responsible for the YAML file only. The rest will be up to IBM.
 
-![VSCode](path/to/image.jpg "Figure 4: Building a parmlib member from YAML")
+![VSCode](/images/Figure4.png "Figure 4: Building a parmlib member from YAML")
 
 Jinja is a standard templating technology that many use to create dynamic web pages. Using a set of rules, it allows us to create a parmlib member based on data in the YAML file and the contents of the template.
 Even though you will never have to touch one of these templates, let’s look at it to show how this technology works.
@@ -110,7 +111,7 @@ Let’s go back into VSCode and edit our jinja template.
 
 1. Find the file BPXPRM.jinja in your file browser and edit it with VSCode. You should see something like this:
 
-![VSCode](path/to/image.jpg "Figure 5:BPXPRM Jinja template")
+![VSCode](/images/Figure5.png "Figure 5:BPXPRM Jinja template")
 
 If what you see isn’t color coded it is because your VSCode does not recognize the jinja file type. You could add a VSCode extension for it but it is hardly worth it since you won’t be touching this file in the future.
 
