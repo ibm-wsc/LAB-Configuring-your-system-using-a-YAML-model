@@ -49,7 +49,7 @@ Click on this and add in the yaml.schema section:
 
 Where path is the location of the schema file you downloaded.
 Once all of this is done you are ready to configure your system’s Unix.
-## The Steps
+## The Components
 There are three different components in this lab:
 - The YAML edit. In this section you will edit a z/OS Unix configuration. In it you can get a feel for the way things are setup and how you will add content and change existing content.
 - The JINJA Template Edit. In real life you will never have to deal with the tooling that converts the YAML into PARMLIB. This section will give you the opportunity to see how we map the YAML into the PARMLIB dataset
