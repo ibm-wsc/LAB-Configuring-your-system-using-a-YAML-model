@@ -38,9 +38,12 @@ Once installed go to the extension settings and in the YAML section you will see
 ![VSCode](images/Figure1.png "Figure 1: Configuring the editor")
 
 Click on this and add in the yaml.schema section:
+```
 "yaml.schemas": {
 "/path/zOSUnixParms.schema.json":"*.zosunixinfo.yaml"
 },
+```
+
 Where path is the location of the schema file you downloaded.
 Once all of this is done you are ready to configure your system’s Unix.
 ## The Steps
