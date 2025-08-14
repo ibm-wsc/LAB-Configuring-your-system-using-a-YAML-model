@@ -7,7 +7,7 @@ This session is intended to get you comfortable with the tooling and processes n
  - Files downloaded:
     - UnixInfo.yaml
     - zOSUnixParms.schema.json
-    - BPXPRM.jinja,
+    - BPXPRM.jinja
     - parmlibbuild.py
 ## Setup
 If you do not have a python environment on your machine, you can get one by downloading it from: https://www.python.org/downloads/release/python-3135/
@@ -26,6 +26,9 @@ In addition to these you will need 4 things from us:
 - zOSUnixParms.schema.json – The rules governing z/OS Unix configuration
 - BPXPRM.jinja – The Jinja template that is used to map out the changes
 - parmlibbuild.py – The code to build a parmlib member using YAML as the source and a map to the parmlib member.
+
+These are located in the `files` folder in this repo. 
+- `LAB-Configuring-your-system-using-a-YAML-model`
 
 You can use any IDE that you wish to edit the data. If you need one, you can download VSCode from: https://code.visualstudio.com/download
 
