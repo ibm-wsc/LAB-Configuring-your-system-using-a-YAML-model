@@ -140,6 +140,7 @@ Any changes we put in the template will be reflected in the output.
 1. Save this template. Now go back into your YAML file and add an entry at the top. The entry should be:
     - Name: ‘Your Name’
         - Where Your Name is your name. 
+![VSCode](/images/Figure7.png "Figure 6:Update YAML")
 1. Save this. Now we can try the buildparm.py program again. 
     - Did the new parmlib member contain your name?
 
