@@ -1,0 +1,314 @@
+{
+    "$id": "zOSUnixParms.schema.json",
+    "title": "JSON Schema for z/OS Unix Parmlib member BPXPRMxx",
+    "description": "Schema for identifying Unix Parameters for YAML",
+    "type": "object",
+    "properties": {
+        "name":{
+            "description": "A bogus entry just for demonstration purposes",
+            "type": "string",
+            "default": "Frank De Gilio"
+        },
+        "lost_XCF_messages": {
+            "description": "Detect lost and duplicate XCF messages in a shared file system configuration.https://www.ibm.com/docs/en/zos/3.1.0?topic=features-lostmsg",
+            "type": "string",
+            "enum": [
+                "ON",
+                "OFF"
+            ]
+        },
+        "auto_convert": {
+            "description": "Enable ASCII or Unicode Services checking. https://www.ibm.com/docs/en/zos/3.1.0?topic=features-autocvt",
+            "type": "string",
+            "enum": [
+                "ON",
+                "ALL",
+                "OFF"
+            ],
+            "default": "ALL"
+        },
+        "maximum_memory_map_area": {
+            "description": "The maximum number of data space pages that can be allocated for memory mapping of z/OS® UNIX files. Storage is not allocated until memory mappings are active. https://www.ibm.com/docs/en/zos/3.1.0?topic=limits-maxmmaparea",
+            "type": "integer",
+            "minimum": 0
+        },
+        "maximum_file_size": {
+            "description": "Specifies the soft and hard resource values that are established as the initial values for new processes.https://www.ibm.com/docs/en/zos/3.1.0?topic=sc-parameters-16",
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 524228
+        },
+        "maximum_io_buffer_per_user": {
+            "description": "Limit of each user's persistent kernel storage for IO buffers. https://www.ibm.com/docs/en/zos/3.1.0?topic=limits-maxiobufuser",
+            "type": "number",
+            "minimum": 1
+        },
+        "component_trace_member": {
+            "description": "The data set member used for tracing while the kernel is starting.https://www.ibm.com/docs/en/zos/3.1.0?topic=limits-ctrace",
+            "type": "string"
+        },
+        "maximum_shared_member_segment_pages": {
+            "description": "The maximum number of pages for shared segments. https://www.ibm.com/docs/en/zos/3.1.0?topic=parameters-statements-bpxprmxx ",
+            "type": "number",
+            "minimum": 1,
+            "maximum": 450359962737000,
+            "default": 25600
+        },
+        "maximum_interprocess_message_number_ids": {
+            "description": "The maximum number of message ids.https://www.ibm.com/docs/en/zos/3.1.0?topic=parameters-statements-bpxprmxx ",
+            "type": "number",
+            "minimum": 1,
+            "maximum": 20000,
+            "default": 500
+        },
+        "maximum_interprocess_semaphore_ids": {
+            "description": "The maximum number of interprocess semaphore ids. This setting has been deprecated and has no effect",
+            "type": "integer",
+            "minimum": 1
+        },
+        "maximum_simultaneous_open_files": {
+            "description": "The maximum number of open files. https://www.ibm.com/docs/en/zos/3.1.0?topic=limits-maxfileproc",
+            "type": "integer",
+            "minimum": 3,
+            "maximum": 524287,
+            "default": 64000
+        },
+        "smf_update_differentiation": {
+            "description": "Specify whether the smf_record() callable service differentiates between read and update access. https://www.ibm.com/docs/en/zos/3.1.0?topic=features-smfupdate",
+            "type": "string",
+            "enum": [
+                "ON",
+                "OFF"
+            ]
+        },
+        "process_wait_timeout": {
+            "description": "Determines whether a process waiting on a terminal should be timed out. https://www.ibm.com/docs/en/zos/3.1.0?topic=features-pwt",
+            "type": "string",
+            "enum": [
+                "SMF",
+                "SMFENV",
+                "ENV"
+            ]
+        },
+        "maximum_simultaneous_sytem_processes": {
+            "description": "The maximum number of processes that can be active at the same time. https://www.ibm.com/docs/en/zos/3.1.0?topic=limits-maxprocsys",
+            "type": "integer",
+            "minimum": 1
+        },
+        "maximum_simultaneous_user_processes": {
+            "description": "The maximum number of processes that a single user can have concurrently active. https://www.ibm.com/docs/en/zos/3.1.0?topic=limits-maxprocuser",
+            "type": "integer",
+            "minimum": 1
+        },
+        "maximum_number_of_pseudo_terminals": {
+            "description": "The number of interactive shell sessions, where each interactive session requires one pseudo-TTY pair. https://www.ibm.com/docs/en/zos/3.1.0?topic=limits-maxptys",
+            "type": "integer",
+            "minimum": 2
+        },
+        "maximum_number_of_threads": {
+            "description": "The maximum number of threads that a single process can have active concurrently. https://www.ibm.com/docs/en/zos/3.1.0?topic=limits-maxthreads",
+            "type": "integer",
+            "minimum": 1
+        },
+        "maximum_number_of_thread_support_tasks": {
+            "description": "The maximum number of MVS™ tasks that a single process can have concurrently active. https://www.ibm.com/docs/en/zos/3.1.0?topic=limits-maxthreadtasks",
+            "type": "integer",
+            "minimum": 1
+        },
+        "maximum_address_space_size": {
+            "description": "The maximum region size (in bytes) for an address space that was created by rlogind, telnetd, and other daemons. https://www.ibm.com/docs/en/zos/3.1.0?topic=limits-maxassize",
+            "type": "integer",
+            "minimum": 1
+        },
+        "maximum_CPU_time": {
+            "description": "The time limit (in seconds) for processes that were created by rlogind, telnetd, and other daemons. https://www.ibm.com/docs/en/zos/3.1.0?topic=limits-maxcputime",
+            "type": "integer",
+            "minimum": 1
+        },
+        "maximum_number_of_shared_pages": {
+            "description": "The maximum number of shared storage pages that can be concurrently in use by z/OS UNIX functions. https://www.ibm.com/docs/en/zos/3.1.0?topic=bpxprmxx-setting-process-limits-in-zos-unix",
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 32768000,
+            "default": 131072
+        },
+        "priority_goal_list": {
+            "description": "The list of service class names of 8 characters or less that are used with the nice(), setpriority(), and chpriority() callable services.https://www.ibm.com/docs/en/zos/3.1.0?topic=limits-prioritygoal",
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "maximum_user_pipes": {
+            "description": "The maximum number of named or unnamed pipes that a user (that is, a UID) can open and use concurrently. https://www.ibm.com/docs/en/zos/3.1.0?topic=limits-maxpipeuser",
+            "type": "integer",
+            "minimum": 1
+        },
+        "priority_pg_number_list": {
+            "description": "The list of performance group numbers that are used with the nice(), setpriority(), and chpriority() callable service. https://www.ibm.com/docs/en/zos/3.1.0?topic=limits-prioritypg",
+            "type": "array",
+            "items": {
+                "type": "integer"
+            }
+        },
+        "step_library_list": {
+            "description": "The path name of the file in the file system that contains the list of MVS™ data sets to be used as step libraries for programs that have the set-user-id and set-group-id bit set on. https://www.ibm.com/docs/en/zos/3.1.0?topic=features-stepliblist",
+            "type": "string"
+        },
+        "file_system_type_info": {
+            "description": "Defines the available filesystems on the platform. https://www.ibm.com/docs/en/zos/3.1.0?topic=systems-filesystype",
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "file_system_definitions": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "description": "Specific Filesystem Definition",
+                        "additionalProperties": false,
+                        "properties": {
+                            "fstype": {
+                                "type": "string",
+                                "enum": [
+                                    "AUTOMNT",
+                                    "CINET",
+                                    "HFS",
+                                    "INET",
+                                    "NFS",
+                                    "PROC",
+                                    "TFS",
+                                    "UDS",
+                                    "UFS",
+                                    "ZFS"
+                                ]
+                            },
+                            "entry_point": {
+                                "type": "string"
+                            },
+                            "address_space_name": {
+                                "type": "string"
+                            },
+                            "address_space_parameter": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "sysplex": {
+                    "type": "string",
+                    "enum": [
+                        "YES",
+                        "NO"
+                    ]
+                },
+                "version": {
+                    "type": "string"
+                },
+                "super_user": {
+                    "type": "string"
+                }
+            }
+        },
+        "filesystems": {
+            "description": "File Systems to be mounted on the system at boot time",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "description": "The file system to be mounted",
+                "additionalProperties": false,
+                "properties": {
+                    "dataset_name": {
+                        "type": "string"
+                    },
+                    "mount_point": {
+                        "type": "string"
+                    },
+                    "fstype": {
+                        "type": "string",
+                        "enum": [
+                            "AUTOMNT",
+                            "CINET",
+                            "HFS",
+                            "INET",
+                            "NFS",
+                            "PROC",
+                            "TFS",
+                            "UDS",
+                            "UFS",
+                            "ZFS"
+                        ]
+                    },
+                    "mode": {
+                        "type": "string",
+                        "oneOf": [
+                            {
+                                "Read": "1"
+                            },
+                            {
+                                "Read-Write": "2"
+                            }
+                        ]
+                    },
+                    "auto_move": {
+                        "type": "string",
+                        "oneOf": [
+                            {
+                                "Yes": "1"
+                            },
+                            {
+                                "No": "2"
+                            }
+                        ]
+                    }
+                },
+                "required": [
+                    "mount_point",
+                    "fstype",
+                    "mode"
+                ]
+            }
+        },
+        "networks": {
+            "description": "Networks defined to the system.",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "description": "Specific network definiiton",
+                "additionalProperties": false,
+                "properties": {
+                    "network_type": {
+                        "type": "string",
+                        "enum": [
+                            "INET",
+                            "UDS",
+                            "CINET"
+                        ]
+                    },
+                    "entry_point": {
+                        "type": "string"
+                    },
+                    "networks": {
+                        "type": "array",
+                        "description": "Networks associated with this network definition",
+                        "items": {
+                            "type": "object",
+                            "description": "Specific network definition",
+                            "additionalProperties": false,
+                            "properties": {
+                                "domain_name": {
+                                    "type": "string"
+                                },
+                                "domain_number": {
+                                    "type": "integer"
+                                },
+                                "maximim_number_of_sockets": {
+                                    "type": "integer"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
