@@ -135,7 +135,7 @@ Any changes we put in the template will be reflected in the output.
 
 1. Let’s input a new line after line2. Make the line: # Template modified by {{%name}}
 
-![VSCode](path/to/image.jpg "Figure 6:Update Template")
+![VSCode](/images/Figure6.png "Figure 6:Update Template")
 
 1. Save this template. Now go back into your YAML file and add an entry at the top. The entry should be:
     - Name: ‘Your Name’
